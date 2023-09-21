@@ -1,15 +1,20 @@
 import React from 'react'
 
-export const Todos = () => {
+export const Todos = ({todos}) => {
     return (
-        <ul className="todos">
-            <li className="todos__item">
-                <span className="todos__text">Deneme TODO</span>
-                <div className="todos__buttons">
-                    <button>X</button>
-                    <button>OK</button>
-                </div>
-            </li>
-        </ul>
+        todos.length > 0 ? (
+            <ul className="todos">
+                {todos.map((todo) => (
+                    <li className="todos__item" key={todo.id}>
+                        <span className="todos__text">{todo.name}</span>
+                        <div className="todos__buttons">
+                            <button>X</button>
+                            <button>OK</button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        ) : null
+
     )
 }

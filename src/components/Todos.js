@@ -2,7 +2,7 @@ import React from 'react';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export const Todos = ({todos, deleteTodo}) => {
+export const Todos = ({todos, deleteTodo, doneTodo}) => {
     return (
         todos.length > 0 ? (
             <ul className="todos">
@@ -12,6 +12,7 @@ export const Todos = ({todos, deleteTodo}) => {
                         <div className="todos__buttons">
                             <button
                                 disabled={todo.status}
+                                onClick={()=>doneTodo(todo.id)}
                             ><FontAwesomeIcon icon={icon({name: 'circle-check'})}/></button>
                             <button
                                 className="close-button"

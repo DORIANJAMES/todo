@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export const Todos = ({todos}) => {
     return (
@@ -8,8 +10,8 @@ export const Todos = ({todos}) => {
                     <li className="todos__item" key={todo.id}>
                         <span className="todos__text " >{!todo.status?todo.name:(<strike>{todo.name}</strike>)}</span>
                         <div className="todos__buttons">
-                            <button disabled={todo.status}>OK</button>
-                            <button className="close-button"><sup>X</sup></button>
+                            <button disabled={todo.status}><FontAwesomeIcon icon={icon({name: 'circle-check'})}/></button>
+                            <button className="close-button"><FontAwesomeIcon icon={icon({name: 'circle-xmark'})}/></button>
                         </div>
                     </li>
                 ))}

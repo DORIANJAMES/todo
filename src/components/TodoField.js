@@ -7,6 +7,7 @@ function TodoField({addTodo}) {
         <>
             <div className="todoField">
                 <input
+
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     type="text"
@@ -17,7 +18,8 @@ function TodoField({addTodo}) {
                                 id:uuidv4(),
                                 name:value,
                                 status:false
-                            })
+                            });
+                            setValue('');
                         }
                     }}
                 />

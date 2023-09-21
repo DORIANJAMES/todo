@@ -47,3 +47,30 @@ body {
   cursor: pointer;
 }
 
+/* todos */
+.todos{
+  list-style-type: none;
+  padding: 0;
+}
+.todos .todos__item{
+  display: flex;;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.todos .todos__text{
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.todos .todos__buttons button{
+  margin-left: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+}
+.todos .todos__buttons button:disabled{
+  cursor: default;
+}
+

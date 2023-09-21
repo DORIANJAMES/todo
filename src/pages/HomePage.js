@@ -1,5 +1,6 @@
 import React from 'react'
 import TodoField from "../components/TodoField";
+import {Todos} from "../components/Todos";
 
 function HomePage() {
     return (
@@ -8,6 +9,7 @@ function HomePage() {
                 <div className="todo-header">TODOs</div>
                 <TodoField/>
             </div>
+            <Todos/>
         </>
     )
 }

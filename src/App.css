@@ -55,6 +55,17 @@ body {
 .todos{
   list-style-type: none;
   padding: 0;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.todos::-webkit-scrollbar{
+  width: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+.todos::-webkit-scrollbar-thumb{
+  background-color: coral;
+  border-radius: 5px;
 }
 .todos .todos__item{
   display: flex;;

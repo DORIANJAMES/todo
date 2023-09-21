@@ -6,15 +6,14 @@ export const Todos = ({todos}) => {
             <ul className="todos">
                 {todos.map((todo) => (
                     <li className="todos__item" key={todo.id}>
-                        <span className="todos__text">{todo.name}</span>
+                        <span className="todos__text " >{!todo.status?todo.name:(<strike>{todo.name}</strike>)}</span>
                         <div className="todos__buttons">
-                            <button>X</button>
-                            <button>OK</button>
+                            <button disabled={todo.status}>OK</button>
+                            <button className="close-button"><sup>X</sup></button>
                         </div>
                     </li>
                 ))}
             </ul>
         ) : null
-
     )
 }

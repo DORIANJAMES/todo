@@ -63,6 +63,9 @@ body {
   text-transform: uppercase;
   font-weight: lighter;
 }
+.todos .todos__buttons{
+  align-items: center;
+}
 .todos .todos__buttons button{
   margin-left: 10px;
   text-decoration: none;
@@ -72,5 +75,9 @@ body {
 }
 .todos .todos__buttons button:disabled{
   cursor: default;
+}
+.todos .todos__buttons button.close-button{
+  font-size: 8px;
+  color: inherit;
 }
 

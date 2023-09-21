@@ -8,16 +8,27 @@ function TodoField({addTodo}) {
             <div className="todoField">
                 <input
                     value={value}
-                    onChange={(e)=>setValue(e.target.value)}
+                    onChange={(e) => setValue(e.target.value)}
                     type="text"
-                    className="todoField__input"/>
-                <button onClick={()=>addTodo(
+                    className="todoField__input"
+                    onKeyDown={(e) => {
+                        if (e.key ==="Enter") {
+                            addTodo({
+                                id:uuidv4(),
+                                name:value,
+                                status:false
+                            })
+                        }
+                    }}
+                />
+                <button onClick={() => addTodo(
                     {
                         id: uuidv4(),
                         name: value,
-                        status:false,
+                        status: false,
                     }
-                )} className="todoField__btn">Add</button>
+                )} className="todoField__btn">Add
+                </button>
             </div>
         </>
     )

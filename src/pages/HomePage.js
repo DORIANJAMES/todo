@@ -21,12 +21,16 @@ function HomePage() {
             setTodos([...todos, todo]);
         }
     }
+    const deleteTodo =(id) => {
+        let newTodos = todos.filter((todo)=>todo.id !== id);
+        setTodos(newTodos)
+    }
     return (
         <>
             <div className="main-container">
                 <div className="todo-header">TODOs</div>
                 <TodoField addTodo={addTodo}/>
-                <Todos todos={todos}/>
+                <Todos todos={todos} deleteTodo={deleteTodo}/>
             </div>
 
         </>

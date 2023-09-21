@@ -14,14 +14,21 @@ function HomePage() {
             name:"shopping",
             status:true,
         }
-    ])
+    ]);
+
+    const addTodo = (todo) => {
+        if (todo.name) {
+            setTodos([...todos, todo]);
+        }
+    }
     return (
         <>
             <div className="main-container">
                 <div className="todo-header">TODOs</div>
-                <TodoField/>
+                <TodoField addTodo={addTodo}/>
+                <Todos todos={todos}/>
             </div>
-            <Todos todos={todos}/>
+
         </>
     )
 }
